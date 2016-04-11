@@ -28,8 +28,13 @@ Route::group(['prefix' => 'install', 'as' => 'LaravelInstaller::', 'namespace' =
             'as' => 'permissions',
             'uses' => 'PermissionsController@permissions'
         ]);
+        
+        Route::get('settings', [
+            'as' => 'settings',
+            'uses' => 'SettingsController@settings'
+        ]);
 
-        Route::get('database', [
+        Route::post('database', [
             'as' => 'database',
             'uses' => 'DatabaseController@database'
         ]);

@@ -45,6 +45,16 @@ return [
 
     /**
      *
+     * Settings page translations.
+     *
+     */
+    'settings' => [
+        'title' => 'Admin Settings',
+    ],
+
+
+    /**
+     *
      * Environment page translations.
      *
      */
