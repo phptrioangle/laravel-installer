@@ -1,6 +1,6 @@
 @extends('vendor.installer.layouts.master')
 
-@section('title', trans('messages.settings.title'))
+@section('title', trans('messages.install.settings.title'))
 @section('container')
 {!! Form::open(['url'=>route('LaravelInstaller::database'),'method'=>'post']) !!}
 <ul class="list">
@@ -27,7 +27,7 @@
 </ul>
 <div class="buttons">
     <button class="button" type="submit">
-        {{ trans('messages.next') }}
+        {{ trans('messages.install.next') }}
     </button>
 </div>
 {!! Form::close() !!}

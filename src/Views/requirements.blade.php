@@ -1,6 +1,6 @@
 @extends('vendor.installer.layouts.master')
 
-@section('title', trans('messages.requirements.title'))
+@section('title', trans('messages.install.requirements.title'))
 @section('container')
 
 <ul class="list">
@@ -12,7 +12,7 @@
 @if(!isset($requirements['errors']))
     <div class="buttons">
         <a class="button" href="{{ route('LaravelInstaller::permissions') }}">
-        {{ trans('messages.next') }}
+        {{ trans('messages.install.next') }}
         </a>
     </div>
 @endif
