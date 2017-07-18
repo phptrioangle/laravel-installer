@@ -23,11 +23,11 @@
 
     @if( ! isset($environment['errors']))
         <div class="buttons-container">
-            <a class="button float-left" href="{{ route('LaravelInstaller::environmentWizard') }}">
+            <!-- <a class="button float-left" href="{{ route('LaravelInstaller::environmentWizard') }}">
                 <i class="fa fa-sliders fa-fw" aria-hidden="true"></i>
                 {!! trans('installer_messages.environment.classic.back') !!}
-            </a>
-            <a class="button float-right" href="{{ route('LaravelInstaller::database') }}">
+            </a> -->
+            <a class="button float-right" href="{{ route('LaravelInstaller::settings') }}">
                 <i class="fa fa-check fa-fw" aria-hidden="true"></i>
                 {!! trans('installer_messages.environment.classic.install') !!}
                 <i class="fa fa-angle-double-right fa-fw" aria-hidden="true"></i>

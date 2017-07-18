@@ -17,14 +17,14 @@ class FinalController extends Controller
      */
     public function finish(InstalledFileManager $fileManager, FinalInstallManager $finalInstall, EnvironmentManager $environment)
     {
-        $finalMessages = $finalInstall->runFinal();
-        $finalStatusMessage = $fileManager->update();
-        $finalEnvFile = $environment->getEnvContent();
-
         $result = file_get_contents(base_path('.env'));
         $newLine = $result."\nSESSION_DRIVER=database\n";
         file_put_contents(base_path('.env'), $newLine);
-
+        
+        $finalMessages = $finalInstall->runFinal();
+        $finalStatusMessage = $fileManager->update();
+        $finalEnvFile = $environment->getEnvContent();
+        
         return view('vendor.installer.finished', compact('finalMessages', 'finalStatusMessage', 'finalEnvFile'));
     }
 }
