@@ -21,7 +21,7 @@ class FinalController extends Controller
         $newLine = $result."\nSESSION_DRIVER=database\n";
         file_put_contents(base_path('.env'), $newLine);
         
-        $finalMessages = $finalInstall->runFinal();
+        // $finalMessages = $finalInstall->runFinal(); // Not working in Laravel 5.3
         $finalStatusMessage = $fileManager->update();
         $finalEnvFile = $environment->getEnvContent();
         
