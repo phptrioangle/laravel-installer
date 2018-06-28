@@ -18,7 +18,7 @@ class FinalInstallManager
         $outputLog = new BufferedOutput;
 
         $this->generateKey($outputLog);
-        $this->publishVendorAssets($outputLog);
+        //$this->publishVendorAssets($outputLog);
 
         return $outputLog->fetch();
     }
