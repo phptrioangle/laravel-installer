@@ -2,7 +2,7 @@
 
 Route::group(['prefix' => 'install', 'as' => 'LaravelInstaller::', 'namespace' => 'RachidLaasri\LaravelInstaller\Controllers', 'middleware' => 'web'], function()
 {
-    Route::group(['middleware' => ['canInstall','web']], function()
+    Route::group(['middleware' => 'canInstall'], function()
     {
         Route::get('/', [
             'as' => 'welcome',
