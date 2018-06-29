@@ -18,11 +18,28 @@ class FinalInstallManager
         $outputLog = new BufferedOutput;
 
         $this->generateKey($outputLog);
+        $this->storage_link_genrate();
         //$this->publishVendorAssets($outputLog);
 
         return $outputLog->fetch();
     }
 
+    /**
+     * Generate storage link.
+     *
+     * @param 
+     * @return collection
+     */
+    private static function storage_link_genrate()
+    {
+        try{
+            Artisan::call('storage:link');
+        }
+        catch(Exception $e){
+            return $this->response($e->getMessage());
+        }
+
+    }
     /**
      * Generate New Application Key.
      *
