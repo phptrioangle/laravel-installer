@@ -35,7 +35,7 @@ class DatabaseManager
     private function migrate($outputLog)
     {
         try{
-            Artisan::call('migrate', ["fresh --path=/database/migrations/* --seed"=> true], $outputLog);
+            Artisan::call('migrate:fresh --path=/database/migrations/* --seed');
             //Artisan::call('migrate', ["--force"=> true], $outputLog);
         }
         catch(Exception $e){
