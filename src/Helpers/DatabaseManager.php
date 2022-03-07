@@ -35,13 +35,15 @@ class DatabaseManager
     private function migrate($outputLog)
     {
         try{
-            Artisan::call('migrate', ["--force"=> true], $outputLog);
+            Artisan::call('migrate', ["fresh --path=/database/migrations/* --seed"=> true], $outputLog);
+            //Artisan::call('migrate', ["--force"=> true], $outputLog);
         }
         catch(Exception $e){
             return $this->response($e->getMessage(), 'danger', $outputLog);
         }
 
-        return $this->seed($outputLog);
+        return $this->response(trans('installer_messages.final.finished'), 'success', $outputLog);       
+        //return $this->seed($outputLog);
     }
 
     /**
